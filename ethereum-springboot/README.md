@@ -33,6 +33,25 @@ src/main/resources/
     └── SimpleStorage.sol     # 示例智能合约
 ```
 
+## 安装solidity编译器（solc）
+```bash
+npm install -g solc
+```
+
+## 生成字节码（即bin文件和abi文件）
+```bash
+solc --bin --abi src/main/resources/contracts/PrizeDraw.sol -o build/
+``````
+## 执行web3j命令生成合约的java类
+```bash
+// 安装web3j的教程
+https://blog.csdn.net/weixin_54912643/article/details/125763425
+
+// 生成合约类
+web3j generate solidity -a build/PrizeDraw.abi -b build/PrizeDraw.bin -o src/main/java -p com.example.ethereum.contract.generated
+```
+
+
 ## 配置说明
 
 在`application.properties`中配置以太坊网络连接参数：

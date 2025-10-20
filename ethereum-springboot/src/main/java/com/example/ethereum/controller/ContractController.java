@@ -1,6 +1,7 @@
 package com.example.ethereum.controller;
 
 import com.example.ethereum.service.ContractService;
+import com.example.ethereum.service.PrizeDrawService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,13 @@ import java.util.concurrent.CompletableFuture;
 public class ContractController {
 
     private final ContractService contractService;
+
+    private final PrizeDrawService prizeDrawService;
+
+    @GetMapping("/start")
+    public void start() {
+        prizeDrawService.start();
+    }
     
     @GetMapping("/value")
     public ResponseEntity<Map<String, Object>> getValue() {

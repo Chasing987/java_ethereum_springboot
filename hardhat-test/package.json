@@ -1,0 +1,7 @@
+{
+  "name": "hardhat-test",
+  "private": true,
+  "devDependencies": {
+    "hardhat": "^2.22.5"
+  }
+}
